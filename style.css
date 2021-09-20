@@ -1,0 +1,382 @@
+/**
+ * CONTENTS
+ *
+ * BODY
+ *
+ * HEADER.parallax1
+ *
+ * SECTION#foreground_part_1
+ *
+ * DIV.parallax2
+ *
+ * SECTION#foreground_part_2
+ *
+ * DIV.parallax3
+ *
+ * SECTION#foreground_part_3
+ *
+ * DIV.parallax4
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #BODY
+\*------------------------------------*/
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #HEADER.parallax1
+\*------------------------------------*/
+
+body, html {
+    height: 100%;
+}
+
+.parallax1 {
+    background-image: url('assets/autumn_forest.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header_text_wrapper {
+    width: 60vw;
+    height: 40vh;
+    color: #fff;
+    background: hsla(100,0%,0%,.6);
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#tagline {
+    font-size: .75rem;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+}
+  
+  /* thematic break */
+#tagline::after {
+    display: block;
+    content: "";
+    background-color: #fff;
+    height: 1px;
+    width: 40%;
+    margin: .5rem auto;
+}
+
+#header_text_wrapper h1 {
+    
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: .25rem;
+}
+
+#header_date {
+    font-size: .75rem;
+    letter-spacing: .15rem;
+    font-style: italic;
+}
+  
+/* thematic break */
+#header_date::before,
+#header_date::after {
+    display: inline-block;
+    content: "";
+    background-color: #fff;
+    height: 1px;
+    width: 1.5rem;
+    vertical-align: middle;
+    margin: 0 .5rem;
+}
+
+@media only screen and (min-width: 768px)
+{
+    #header_text_wrapper {
+        width: 50vw;
+        height: 50vh;
+    }
+
+    #tagline, #header_date {
+        font-size: 1.25rem;
+    }
+
+    #header_text_wrapper h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 992px)
+{
+    #header_text_wrapper {
+        width: 40vw;
+        height: 50vh;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #SECTION#foreground_part_1
+\*------------------------------------*/
+
+#foreground_part_1 {
+    background-color: #354863;
+    color: rgb(243, 232, 232);
+}
+
+#foreground_part_1 article {
+    width: 90vw;
+    text-align: justify;
+    font-size: 2vh;
+    line-height: 1.2rem;
+    margin: 0 auto;
+}
+
+#foreground_part_1 img {
+    width: 90vw;
+    padding-top: 1rem;
+    padding-bottom: .8rem;
+}
+
+
+#foreground_part_1 h2 {
+    text-align: center;
+    padding-top: 1.8rem;
+    padding-bottom: 1.2rem;
+}
+
+#foreground_part_1 h3, #foreground_part_1 h4 {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#foreground_part_1 p:last-child {
+    padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px)
+{
+    #foreground_part_1 article {
+        width: 80vw;
+        line-height: 1.8rem;
+        margin: 0 auto;
+    }
+    #foreground_part_1 img {
+        width: 70vw;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 992px)
+{
+    #foreground_part_1 article {
+        line-height: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1200px)
+{
+    #foreground_part_1 article {
+        width: 90vw;
+        overflow: auto;
+    }
+    #pic_pumpkin, #pic_turkey {
+        max-width: 30vw;
+        float: right;
+        padding: 0 1rem;
+    }
+
+    #pic_pie {
+        max-width: 30vw;
+        float: left;
+        padding: 0 1rem;
+    }
+}
+
+@media only screen and (min-width: 1400px)
+{
+    #article_halloween, #article_thanksgiving {
+        max-width: 48vw;
+    }
+
+    /* Psitioning of #article_halloween and #article_thanksgiving */
+    #foreground_part_1 div {
+        display: flex; /* they place in one row */
+    }
+
+    #foreground_part_1 img {
+        max-width: 20vw;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #DIV.parallax2
+\*------------------------------------*/
+
+.parallax2 {
+    background-image: url('assets/autumn_shore.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #SECTION#foreground_part_2
+\*------------------------------------*/
+
+#foreground_part_2 {
+    padding: 1rem;
+    text-align: justify;
+    background-image: url('assets/at_home.jpg');
+    background-size: cover;
+    color: rgb(243, 232, 232);
+    font-size: 2vh;
+}
+
+#foreground_part_2 h2 {
+    text-align: center;
+}
+
+#foreground_part_2 img {
+    display: block;
+    margin: 0 auto;
+}
+
+#foreground_part_2 h2, #foreground_part_2 p {
+    padding-bottom: 1.5rem;
+} 
+
+#foreground_part_2 button {
+    padding: .3rem .8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, rgb(240, 244, 245) 0%, rgb(213, 220, 221) 100%);
+    box-shadow: 4px 4px 8px rgba(151,155,156,1);
+}
+
+@media only screen and (min-width: 768px) {
+    #foreground_part_2_inner_cont {
+        width: 60vw;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #foreground_part_2 img {
+        margin: 0;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+  #DIV.parallax3
+\*------------------------------------*/
+
+.parallax3 {
+    background-image: url('assets/autumn_waterfall.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #SECTION#foreground_part_3
+\*------------------------------------*/
+
+#foreground_part_3 {
+    background-image: url('assets/chocolate_and_autumn_stuffs.jpg');
+    background-size: cover;
+    color: whitesmoke;
+    filter: grayscale(40%);
+    font-size: 2vh;
+}
+
+#foreground_part_3 h3 {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+#foreground_part_3_inner_cont {
+    width: 90vw;
+    background: hsla(100,0%,0%,.6);
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+#text_for_accept_box a {
+    color: rgb(211, 211, 69);
+}
+
+#foreground_part_3 button {
+    padding: .5rem .6rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, rgb(240, 244, 245) 0%, rgba(151,155,156,1) 100%);
+}
+
+@media only screen and (min-width: 768px)
+{
+    #foreground_part_3_inner_cont {
+        width: 50vw;
+        padding: 2rem;
+    }
+
+    #foreground_part_3 h3 {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1200px)
+{
+    #foreground_part_3_inner_cont {
+        width: 35vw;   
+    }   
+}
+
+
