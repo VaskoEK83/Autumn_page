@@ -174,6 +174,6 @@ document.getElementById("recommendButton").onclick = () => {
     }
     document.getElementById("resultLabelText").innerText = resultText;
     let img = document.getElementById("picture");
-    img.src = 'assets/books/' + picName + '.jpg';
+    img.src = 'assets/books_and_films/' + picName + '.jpg';
     img.width = 300;
 };
