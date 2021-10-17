@@ -1,47 +1,9 @@
 "use strict";
-// Data for newsletter section
+// modify h4 tags
 var h4 = document.getElementsByTagName("h4");
 for (let i = 0; i < h4.length; i++) {
     h4[i].style.fontStyle = "italic";
 }
-let ajax1 = new XMLHttpRequest();
-ajax1.onreadystatechange = function () {
-    if (ajax1.readyState === 4 && ajax1.status === 200) {
-        let data = JSON.parse(ajax1.responseText);
-        {
-            let genderSelector = document.getElementById("gender");
-            for (let gender of data["genders"].genders2) {
-                let inputWgt = document.createElement("input");
-                inputWgt.type = "radio";
-                inputWgt.name = "Gender";
-                genderSelector.append(inputWgt);
-                let labelWgt = document.createElement("label");
-                labelWgt.innerText = gender;
-                genderSelector.appendChild(labelWgt);
-                let brWgt = document.createElement("br");
-                genderSelector.appendChild(brWgt);
-            }
-        }
-        {
-            let ageGroupSelector = document.getElementById("ageGroup");
-            for (let ageGroup of data["ageGroups"].ageGroups_longerList) {
-                let optionWgt = document.createElement("option");
-                optionWgt.innerText = ageGroup;
-                ageGroupSelector.append(optionWgt);
-            }
-        }
-        {
-            let interestSelector = document.getElementById("interest");
-            let inputStr = "";
-            for (let interest of data["interests"]) {
-                inputStr += '<br>' + '<input type="checkbox">' + " " + interest;
-            }
-            interestSelector.innerHTML = inputStr;
-        }
-    }
-};
-ajax1.open("GET", "data_for_newsletter.json");
-ajax1.send();
 // Data for book, film offer section
 let offers; // download data from server
 fetch("data_for_books_films.json", { method: "GET", headers: { "Content-Type": "application/json" } })
@@ -177,3 +139,41 @@ document.getElementById("recommendButton").onclick = () => {
     img.src = 'assets/books_and_films/' + picName + '.jpg';
     img.width = 300;
 };
+let ajax1 = new XMLHttpRequest();
+ajax1.onreadystatechange = function () {
+    if (ajax1.readyState === 4 && ajax1.status === 200) {
+        let data = JSON.parse(ajax1.responseText);
+        {
+            let genderSelector = document.getElementById("gender");
+            for (let gender of data["genders"].genders2) {
+                let inputWgt = document.createElement("input");
+                inputWgt.type = "radio";
+                inputWgt.name = "Gender";
+                genderSelector.append(inputWgt);
+                let labelWgt = document.createElement("label");
+                labelWgt.innerText = gender;
+                genderSelector.appendChild(labelWgt);
+                let brWgt = document.createElement("br");
+                genderSelector.appendChild(brWgt);
+            }
+        }
+        {
+            let ageGroupSelector = document.getElementById("ageGroup");
+            for (let ageGroup of data["ageGroups"].ageGroups_longerList) {
+                let optionWgt = document.createElement("option");
+                optionWgt.innerText = ageGroup;
+                ageGroupSelector.append(optionWgt);
+            }
+        }
+        {
+            let interestSelector = document.getElementById("interest");
+            let inputStr = "";
+            for (let interest of data["interests"]) {
+                inputStr += '<br>' + '<input type="checkbox">' + " " + interest;
+            }
+            interestSelector.innerHTML = inputStr;
+        }
+    }
+};
+ajax1.open("GET", "data_for_newsletter.json");
+ajax1.send();

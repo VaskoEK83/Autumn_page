@@ -1,73 +1,10 @@
 
-// Data for newsletter section
+// modify h4 tags
 
 var h4 = document.getElementsByTagName("h4");
   for (let i = 0; i < h4.length; i++) {
     h4[i].style.fontStyle = "italic";
   }
-
-
-interface Data
-{
-    genders: Record<string, string[]>;
-    ageGroups: Record<string, string[]>;
-    interests: string[];
-}
-
-let ajax1: XMLHttpRequest = new XMLHttpRequest();
-ajax1.onreadystatechange = function() {
-
-    if (ajax1.readyState === 4 && ajax1.status === 200)
-    {
-        let data: Data = JSON.parse(ajax1.responseText);
-        
-        {
-            let genderSelector: HTMLInputElement = document.getElementById("gender") as HTMLInputElement;
-
-            for (let gender of data["genders"].genders2)
-            {
-                let inputWgt: HTMLInputElement = document.createElement("input") as HTMLInputElement;
-                
-                inputWgt.type = "radio";
-                inputWgt.name = "Gender";
-                genderSelector.append(inputWgt);
-
-                let labelWgt: HTMLLabelElement = document.createElement("label");
-                labelWgt.innerText = gender;
-                genderSelector.appendChild(labelWgt);
-
-                let brWgt: HTMLBRElement = document.createElement("br") as HTMLBRElement;
-                genderSelector.appendChild(brWgt);
-            }
-        }
-
-        {
-            let ageGroupSelector: HTMLSelectElement = document.getElementById("ageGroup") as HTMLSelectElement;
-
-            for (let ageGroup of data["ageGroups"].ageGroups_longerList)
-            {
-                let optionWgt: HTMLOptionElement = document.createElement("option") as HTMLOptionElement;
-                optionWgt.innerText = ageGroup;
-                ageGroupSelector.append(optionWgt);
-            }
-        }
-            
-        {
-            let interestSelector: HTMLInputElement = document.getElementById("interest") as HTMLInputElement;
-
-            let inputStr: string = "";
-
-            for (let interest of data["interests"])
-            {
-                inputStr += '<br>' + '<input type="checkbox">' + " " + interest;
-            }
-            interestSelector.innerHTML = inputStr;
-        }
-        
-    }
-};
-ajax1.open("GET", "data_for_newsletter.json");
-ajax1.send();
 
 
 
@@ -259,3 +196,68 @@ document.getElementById("recommendButton").onclick = () => {
 
 
 
+
+
+// Data for newsletter section
+
+interface Data
+{
+    genders: Record<string, string[]>;
+    ageGroups: Record<string, string[]>;
+    interests: string[];
+}
+
+let ajax1: XMLHttpRequest = new XMLHttpRequest();
+ajax1.onreadystatechange = function() {
+
+    if (ajax1.readyState === 4 && ajax1.status === 200)
+    {
+        let data: Data = JSON.parse(ajax1.responseText);
+        
+        {
+            let genderSelector: HTMLInputElement = document.getElementById("gender") as HTMLInputElement;
+
+            for (let gender of data["genders"].genders2)
+            {
+                let inputWgt: HTMLInputElement = document.createElement("input") as HTMLInputElement;
+                
+                inputWgt.type = "radio";
+                inputWgt.name = "Gender";
+                genderSelector.append(inputWgt);
+
+                let labelWgt: HTMLLabelElement = document.createElement("label");
+                labelWgt.innerText = gender;
+                genderSelector.appendChild(labelWgt);
+
+                let brWgt: HTMLBRElement = document.createElement("br") as HTMLBRElement;
+                genderSelector.appendChild(brWgt);
+            }
+        }
+
+        {
+            let ageGroupSelector: HTMLSelectElement = document.getElementById("ageGroup") as HTMLSelectElement;
+
+            for (let ageGroup of data["ageGroups"].ageGroups_longerList)
+            {
+                let optionWgt: HTMLOptionElement = document.createElement("option") as HTMLOptionElement;
+                optionWgt.innerText = ageGroup;
+                ageGroupSelector.append(optionWgt);
+            }
+        }
+            
+        {
+            let interestSelector: HTMLInputElement = document.getElementById("interest") as HTMLInputElement;
+
+            let inputStr: string = "";
+
+            for (let interest of data["interests"])
+            {
+                inputStr += '<br>' + '<input type="checkbox">' + " " + interest;
+            }
+            interestSelector.innerHTML = inputStr;
+        }
+        
+    }
+};
+ajax1.open("GET", "data_for_newsletter.json");
+ajax1.send();
