@@ -136,7 +136,7 @@ document.getElementById("recommendButton").onclick = () => {
     }
     document.getElementById("resultLabelText").innerText = resultText;
     let img = document.getElementById("picture");
-    img.src = 'assets/books_and_films/' + picName + '.jpg';
+    img.src = 'assets/books_and_films/' + picName + '.png';
     img.width = 300;
 };
 let ajax1 = new XMLHttpRequest();

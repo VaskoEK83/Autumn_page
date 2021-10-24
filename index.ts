@@ -190,7 +190,7 @@ document.getElementById("recommendButton").onclick = () => {
     document.getElementById("resultLabelText").innerText = resultText;
 
     let img: HTMLImageElement = document.getElementById("picture") as HTMLImageElement;
-    img.src = 'assets/books_and_films/' + picName + '.jpg';
+    img.src = 'assets/books_and_films/' + picName + '.png';
     img.width = 300;
 };
 
